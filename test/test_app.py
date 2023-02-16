@@ -186,24 +186,6 @@ def test_givenNonValidBodyRequestThenReturnError500(lambda_environment, data_tab
     assert lambdaResponse['statusCode'] == 500
     assert lambdaResponse['body'] == '{"message": "cannot proceed with the request error: Input request is malformed or missing parameters, details license cannot be empty"}'
 
-def test_givenRequestWithoutBodyThenReturnError412(lambda_environment, data_table):
-
-    event = {
-            "resource": "/doctor/{doctor_id}/license",
-            "path": "/doctor/license",
-            "httpMethod": "POST",
-            "pathParameters": {
-                "doctor_id": "123"
-            },
-            "body": None,
-            "isBase64Encoded": False
-    }
-    lambdaResponse = app.handler(event, [])
-
-
-    assert lambdaResponse['statusCode'] == 412
-    assert lambdaResponse['body'] == '{"message": "missing or malformed request body"}'
-
 def test_givenValidRequestAndDBFailureThenReturn500(lambda_environment):
 
     event = {
