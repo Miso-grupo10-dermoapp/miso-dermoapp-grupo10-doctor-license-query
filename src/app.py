@@ -4,7 +4,7 @@ from db_service import get_item
 from request_validation_utils import validate_property_exist
 from request_response_utils import return_error_response, return_status_ok
 
-ENV_TABLE_NAME = "Dermoapp-sprint1-doctor-DoctorDetails-HJ34HOQYTKA6"
+ENV_TABLE_NAME = "dermoapp-doctor"
 
 
 def handler(event, context):

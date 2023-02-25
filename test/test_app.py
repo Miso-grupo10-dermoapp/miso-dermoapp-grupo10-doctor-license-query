@@ -8,7 +8,7 @@ import pytest
 
 import app
 
-TABLE_NAME = "Dermoapp-sprint1-doctor-DoctorDetails-HJ34HOQYTKA6"
+TABLE_NAME = "dermoapp-doctor"
 @pytest.fixture
 def lambda_environment():
     os.environ[app.ENV_TABLE_NAME] = TABLE_NAME
